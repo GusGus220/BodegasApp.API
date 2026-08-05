@@ -1,4 +1,4 @@
-﻿namespace BodegasApp.API.Services
+namespace BodegasApp.API.Services
 {
     using Microsoft.Extensions.Configuration;
     using MongoDB.Driver;
@@ -25,6 +25,18 @@
         // --- MÉTODOS DE PRODUCTOS ---
         public async Task<List<Producto>> GetAsync() =>
             await _productosCollection.Find(_ => true).ToListAsync();
+
+        public async Task<bool> ActualizarProductoAsync(string id, Producto productoActualizado)
+        {
+            var resultado = await _productosCollection.ReplaceOneAsync(p => p.Id == id, productoActualizado);
+            return resultado.IsAcknowledged && resultado.ModifiedCount > 0;
+        }
+
+        public async Task<bool> EliminarProductoAsync(string id)
+        {
+            var resultado = await _productosCollection.DeleteOneAsync(p => p.Id == id);
+            return resultado.IsAcknowledged && resultado.DeletedCount > 0;
+        }
 
         public async Task CreateAsync(Producto nuevoProducto)
         {
