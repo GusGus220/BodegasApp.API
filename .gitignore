@@ -1,0 +1,65 @@
+# ==========================================
+# .NET / C# / Visual Studio 
+# ==========================================
+
+# Carpetas de compilación (¡Lo más importante para que no pese gigas!)
+[Bb]in/
+[Oo]bj/
+[Ll]og/
+[Ll]ogs/
+[Dd]ebug/
+[Rr]elease/
+x64/
+x86/
+[Aa][Rr][Mm]/
+[Aa][Rr][Mm]64/
+
+# Archivos de configuración de usuario local de Visual Studio
+.vs/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+*.userprefs
+
+# ==========================================
+# .NET MAUI (Android / iOS / Windows)
+# ==========================================
+
+# Archivos de firma y llaves (¡Nunca subas tus llaves de producción!)
+*.keystore
+*.jks
+*.mobileprovision
+*.p12
+*.cer
+*.cert
+
+# Caché de emuladores y builds
+.mono/
+project.lock.json
+project.fragment.lock.json
+artifacts/
+
+# ==========================================
+# ASP.NET Core Web API
+# ==========================================
+
+# Ocultar configuraciones locales (Para que no subas tu password de MongoDB por accidente si usas estos archivos)
+appsettings.Development.json
+appsettings.Local.json
+.env
+
+# ==========================================
+# Archivos del Sistema Operativo
+# ==========================================
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
